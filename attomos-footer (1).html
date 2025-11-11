@@ -1,0 +1,452 @@
+{{define "partials/footer.html"}}
+<style>
+    /* Footer Styles - Diseño Minimalista Profesional */
+    .footer {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 80px 0 40px 0;
+        position: relative;
+        border-top: 1px solid #2d2d2d;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 80px;
+        margin-bottom: 60px;
+    }
+
+    .footer-main-column {
+        padding-right: 40px;
+    }
+
+    .footer-logo {
+        font-size: 28px;
+        font-weight: 900;
+        color: #ffffff;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-logo i {
+        font-size: 30px;
+    }
+
+    .footer-description {
+        color: #9ca3af;
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 32px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 20px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #2a2621;
+        color: #6b5d52;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .social-link:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        color: #ffffff;
+    }
+
+    .social-link:hover::before {
+        width: 100%;
+        height: 100%;
+    }
+
+    .social-link.social-whatsapp::before {
+        background: #25D366;
+    }
+
+    .social-link.social-instagram::before {
+        background: linear-gradient(45deg, #E4405F, #833AB4, #F77737);
+    }
+
+    .social-link.social-tiktok::before {
+        background: #000000;
+    }
+
+    .social-link.social-x::before {
+        background: #000000;
+    }
+
+    .social-link i {
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-contact-info {
+        margin-top: 20px;
+    }
+
+    .footer-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        color: #9ca3af;
+        font-size: 14px;
+    }
+
+    .footer-contact-item i {
+        font-size: 16px;
+        color: #06b6d4;
+    }
+
+    .footer-contact-item a {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-contact-item a:hover {
+        color: #06b6d4;
+    }
+
+    .footer-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 24px;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 14px;
+    }
+
+    .footer-links a {
+        color: #9ca3af;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #06b6d4;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #2d2d2d;
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-copyright {
+        color: #6b7280;
+        font-size: 14px;
+    }
+
+    .footer-legal-links {
+        display: flex;
+        gap: 24px;
+    }
+
+    .footer-legal-links a {
+        color: #6b7280;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s ease;
+    }
+
+    .footer-legal-links a:hover {
+        color: #06b6d4;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-container {
+            padding: 0 24px;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-main-column {
+            grid-column: 1 / -1;
+            padding-right: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-container {
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .footer-main-column {
+            padding-right: 0;
+        }
+
+        .footer-logo {
+            justify-content: center;
+        }
+
+        .footer-social {
+            justify-content: center;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-contact-item {
+            justify-content: center;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .footer-legal-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Main Column -->
+            <div class="footer-main-column">
+                <div class="footer-logo">
+                    <i class="lni lni-code-alt"></i>
+                    Attomos
+                </div>
+                <p class="footer-description">
+                    Automatiza tu negocio con inteligencia artificial avanzada. Chatbots que transforman conversaciones en resultados reales para empresas de todos los tamaños.
+                </p>
+                
+                <div class="footer-social">
+                    <a href="https://wa.me/1234567890" class="social-link social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="lni lni-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/attomos" class="social-link social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="lni lni-instagram-filled"></i>
+                    </a>
+                    <a href="https://tiktok.com/@attomos" class="social-link social-tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="lni lni-tiktok-alt"></i>
+                    </a>
+                    <a href="https://x.com/attomos" class="social-link social-x" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                        <i class="lni lni-twitter-filled"></i>
+                    </a>
+                </div>
+
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <i class="lni lni-envelope"></i>
+                        <a href="mailto:hola@attomos.com">hola@attomos.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="lni lni-phone"></i>
+                        <a href="tel:+521234567890">+52 123 456 7890</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="lni lni-map-marker"></i>
+                        <span>Hermosillo, Sonora, México</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Column -->
+            <div class="footer-column">
+                <h4 class="footer-title">Producto</h4>
+                <ul class="footer-links">
+                    <li><a href="/features">Características</a></li>
+                    <li><a href="/integrations">Integraciones</a></li>
+                    <li><a href="/pricing">Precios</a></li>
+                    <li><a href="/agents">Chatbots</a></li>
+                    <li><a href="/docs">Documentación</a></li>
+                    <li><a href="/api">API</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-column">
+                <h4 class="footer-title">Empresa</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Sobre Nosotros</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/careers">Carreras</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                    <li><a href="/press">Prensa</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Column -->
+            <div class="footer-column">
+                <h4 class="footer-title">Soporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/help">Centro de Ayuda</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/tutorials">Tutoriales</a></li>
+                    <li><a href="/community">Comunidad</a></li>
+                    <li><a href="/status">Estado del Sistema</a></li>
+                    <li><a href="/security">Seguridad</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2025 Attomos. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-links">
+                <a href="/privacy">Política de Privacidad</a>
+                <a href="/terms">Términos de Uso</a>
+                <a href="/cookies">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Footer animations on scroll (optional)
+    (function() {
+        'use strict';
+        
+        // Add smooth scroll to top functionality
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="lni lni-chevron-up"></i>';
+        scrollToTopBtn.className = 'scroll-to-top';
+        scrollToTopBtn.setAttribute('aria-label', 'Volver arriba');
+        
+        // Add scroll to top button styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .scroll-to-top {
+                position: fixed;
+                bottom: 32px;
+                right: 32px;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #06b6d4;
+                color: white;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+            }
+            
+            .scroll-to-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .scroll-to-top:hover {
+                background: #0891b2;
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(6, 182, 212, 0.5);
+            }
+            
+            @media (max-width: 768px) {
+                .scroll-to-top {
+                    bottom: 88px;
+                    right: 20px;
+                    width: 44px;
+                    height: 44px;
+                    font-size: 18px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(scrollToTopBtn);
+        
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update current year
+        const copyrightText = document.querySelector('.footer-copyright');
+        if (copyrightText) {
+            const currentYear = new Date().getFullYear();
+            copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', currentYear);
+        }
+        
+    })();
+</script>
+{{end}}
