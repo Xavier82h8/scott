@@ -433,40 +433,35 @@
         }
 
         .mockup-phone {
+            width: 380px;
+            height: 640px;
             position: relative;
-            width: 380px; /* Ancho base del mockup */
-            height: 640px; /* Alto base del mockup */
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.15));
             transition: transform 0.3s ease;
         }
 
         .mockup-phone:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
-        .mockup-frame {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .mockup-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Asegura que el marco se ajuste bien */
-            z-index: 3; /* El marco siempre encima */
-            pointer-events: none; /* No interfiere con el video si es necesario */
+            object-fit: contain;
+            z-index: 2;
+            position: relative;
         }
 
         .phone-screen-video {
             position: absolute;
             top: 50%;
             left: 50%;
-    /* Ajuste para encajar el video dentro del marco */
             transform: translate(-50%, -50%);
-    width: 92%; /* Reducido para ajustarse al marco */
-    height: 91%; /* Reducido para ajustarse al marco */
+            width: 195px;
+            height: 410px;
             object-fit: cover;
-            /* El borde redondeado debe coincidir con el del marco interno */
-            border-radius: 40px;
-            z-index: 2; /* El video debajo del marco */
+            border-radius: 34px;
+            z-index: 1;
         }
 
         .carousel-arrows {
@@ -849,8 +844,8 @@
             }
 
             .phone-screen-video {
-                width: 154px;
-                height: 323px;
+                width: 88%;
+                height: 89%;
             }
 
             .section-title {
