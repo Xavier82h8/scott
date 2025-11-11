@@ -1,0 +1,642 @@
+/* ============================================
+   CORRECCIONES COMPLETAS - DESKTOP Y MÓVIL
+   ============================================ */
+
+/* ===== PROBLEMA 1: VIDEO DESALINEADO EN MOCKUP ===== */
+
+/* IMPORTANTE: Estos estilos SOBRESCRIBEN los conflictivos de index.css y carousel-styles.css */
+
+/* Contenedor del mockup - base estable */
+.mockup-container {
+    perspective: 1000px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: visible;
+    min-height: 500px;
+}
+
+/* El teléfono mockup - dimensiones precisas */
+.mockup-phone {
+    position: relative;
+    width: 380px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* VIDEO - Corrección principal del tamaño y posición */
+.phone-screen-video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    /* Tamaño exacto para encajar en el mockup */
+    width: 332px !important;  /* 87.4% de 380px */
+    height: 570px !important; /* Altura proporcional al mockup estándar */
+    object-fit: cover !important;
+    border-radius: 32px !important;
+    z-index: 1 !important;
+    box-shadow: none !important;
+}
+
+/* Marco del mockup - debe estar encima del video */
+.mockup-frame {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+/* ===== PROBLEMA 2: BOTÓN WHATSAPP ===== */
+
+/* IMPORTANTE: Este estilo SOBRESCRIBE el de index.css */
+
+.whatsapp-float {
+    position: fixed !important;
+    bottom: 32px !important;
+    right: 32px !important;
+    width: 64px !important;
+    height: 64px !important;
+    background: #25D366 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    z-index: 1001 !important; /* Más alto que cualquier otro elemento */
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.whatsapp-float i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.whatsapp-float:hover {
+    background: #128C7E !important;
+    transform: translateY(-6px) scale(1.05) !important;
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5) !important;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 76px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #1a1a1a;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 80px;
+}
+
+/* ===== PROBLEMA 3: CARRUSEL - FLECHAS DE NAVEGACIÓN ===== */
+
+/* Asegurar que las flechas sean visibles y funcionales */
+.carousel-arrow-group {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 32px !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 16px !important;
+    z-index: 10 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.carousel-arrow {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    color: #374151 !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.carousel-arrow:hover {
+    background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+    color: white !important;
+    border-color: transparent !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3) !important;
+}
+
+.carousel-arrow i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ===== RESPONSIVE - TABLET (1024px - 768px) ===== */
+@media (max-width: 1024px) {
+    .mockup-phone {
+        width: 320px;
+    }
+
+    .phone-screen-video {
+        width: 280px !important;
+        height: 480px !important;
+        border-radius: 28px !important;
+    }
+
+    .carousel-arrow-group {
+        bottom: 24px !important;
+    }
+}
+
+/* ===== RESPONSIVE - MÓVIL (768px - 640px) ===== */
+@media (max-width: 768px) {
+    .mockup-phone {
+        width: 300px;
+    }
+
+    .phone-screen-video {
+        width: 262px !important;
+        height: 450px !important;
+        border-radius: 26px !important;
+    }
+
+    .whatsapp-float {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 56px !important;
+        height: 56px !important;
+        font-size: 28px !important;
+    }
+
+    .whatsapp-tooltip {
+        display: none !important;
+    }
+
+    .carousel-arrow-group {
+        bottom: 20px !important;
+        gap: 12px !important;
+        padding: 6px !important;
+    }
+
+    .carousel-arrow {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 18px !important;
+    }
+}
+
+/* ===== RESPONSIVE - MÓVIL PEQUEÑO (640px - 480px) ===== */
+@media (max-width: 640px) {
+    .mockup-phone {
+        width: 280px;
+    }
+
+    .phone-screen-video {
+        width: 245px !important;
+        height: 420px !important;
+        border-radius: 24px !important;
+    }
+}
+
+/* ===== RESPONSIVE - MÓVIL MUY PEQUEÑO (<480px) ===== */
+@media (max-width: 480px) {
+    .mockup-phone {
+        width: 260px;
+        max-width: 90vw;
+    }
+
+    .phone-screen-video {
+        width: 227px !important;
+        height: 390px !important;
+        border-radius: 22px !important;
+    }
+
+    .whatsapp-float {
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 26px !important;
+    }
+
+    .carousel-arrow-group {
+        bottom: 16px !important;
+    }
+
+    .carousel-arrow {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* ===== CORRECCIÓN ADICIONAL: SCROLL-TO-TOP ===== */
+/* Evitar conflicto con WhatsApp button */
+.scroll-to-top {
+    bottom: 104px !important; /* Posición ajustada para no chocar con WhatsApp */
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 88px !important;
+    }
+}
+
+/* ===== CORRECCIÓN: PLATFORMS SECTION ===== */
+.platforms-section {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+    min-height: 600px;
+}
+
+.platform-block {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.platform-block.reverse {
+    grid-template-columns: 1fr 450px;
+}
+
+.platform-block.reverse .mockup-container {
+    order: 2;
+}
+
+.platform-block.reverse .platform-content {
+    order: 1;
+}
+
+@media (max-width: 1024px) {
+    .platform-block,
+    .platform-block.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .platform-block.reverse .mockup-container,
+    .platform-block.reverse .platform-content {
+        order: initial;
+    }
+}
+
+/* ============================================
+   CORRECCIONES CRÍTICAS DEL FORMULARIO
+   ============================================ */
+
+/* 1. CORRECCIÓN: Labels flotantes con fondo blanco sólido */
+.floating-label,
+.floating-label-select {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Fondo blanco sólido para evitar superposición */
+    background: #ffffff;
+    padding: 0 8px;
+    font-size: 1rem;
+    color: #64748b;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    font-weight: 500;
+    z-index: 3; /* Encima del input pero debajo del icono */
+}
+
+/* Label del select ya flotando */
+.floating-label-select {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    color: #06b6d4;
+    font-weight: 600;
+}
+
+/* 2. CORRECCIÓN: Activación correcta de labels flotantes */
+.form-field.has-value .floating-label,
+.form-field.is-focused .floating-label,
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label,
+.form-textarea:focus + .floating-label,
+.form-textarea:not(:placeholder-shown) + .floating-label {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    color: #06b6d4;
+    font-weight: 600;
+    left: 48px;
+}
+
+/* 3. CORRECCIÓN: Select con opciones visibles */
+.form-select {
+    padding-left: 52px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Flecha mejorada */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%2306b6d4' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    background-color: #ffffff;
+}
+
+.form-select option {
+    padding: 12px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.form-select option:hover,
+.form-select option:checked {
+    background: #f0f9ff;
+    color: #06b6d4;
+}
+
+/* 4. CORRECCIÓN: Placeholder invisible pero funcional */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    opacity: 0;
+    color: transparent;
+}
+
+/* 5. CORRECCIÓN: Estados válidos e inválidos sin llenar fondo */
+.form-field.is-valid .form-input,
+.form-field.is-valid .form-select,
+.form-field.is-valid .form-textarea {
+    border-color: #10b981 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.10) !important;
+}
+
+.form-field.is-invalid .form-input,
+.form-field.is-invalid .form-select,
+.form-field.is-invalid .form-textarea {
+    border-color: #ef4444 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(239,68,68,0.10) !important;
+}
+
+/* 6. CORRECCIÓN: Iconos con color correcto */
+.form-field.is-valid .input-icon {
+    color: #10b981 !important;
+}
+
+.form-field.is-invalid .input-icon {
+    color: #ef4444 !important;
+}
+
+.form-field.is-focused .input-icon {
+    color: #06b6d4 !important;
+}
+
+/* 7. CORRECCIÓN: Textarea con altura adecuada */
+.form-textarea {
+    min-height: 180px;
+    max-height: 400px;
+    resize: vertical;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* 8. CORRECCIÓN: Mensajes de error visibles y legibles */
+.field-error {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #ef4444;
+    font-weight: 500;
+    padding-left: 52px;
+    min-height: 20px; /* Reserva espacio para evitar saltos */
+}
+
+.field-error:not(:empty) {
+    animation: slideIn 0.3s ease-out;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 9. CORRECCIÓN: Botón con estados claros */
+.form-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.form-button:disabled:hover {
+    transform: none !important;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25) !important;
+}
+
+/* 10. CORRECCIÓN: Success message visible */
+.success-message.show {
+    display: flex !important;
+}
+
+/* 11. CORRECCIÓN: Z-index correcto para elementos */
+.form-field {
+    position: relative;
+    z-index: 1;
+}
+
+.form-field:focus-within {
+    z-index: 10; /* Asegurar que el campo con foco esté encima */
+}
+
+.input-icon {
+    z-index: 4; /* Encima de todo excepto el select abierto */
+}
+
+/* 12. CORRECCIÓN: Select abierto encima de todo */
+.form-select:focus {
+    z-index: 100;
+    position: relative;
+}
+
+/* 13. CORRECCIÓN: Espaciado consistente */
+.form-row {
+    margin-bottom: 28px;
+}
+
+.form-row:last-of-type {
+    margin-bottom: 0;
+}
+
+/* 14. CORRECCIÓN: Inputs con altura consistente */
+.form-input,
+.form-select {
+    height: 62px;
+    line-height: 62px;
+}
+
+/* 15. CORRECCIÓN: Accesibilidad mejorada */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 4px rgba(6,182,212,0.15), 0 4px 12px rgba(6,182,212,0.1);
+}
+
+/* 16. CORRECCIÓN: Animación del icono del botón */
+.button-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.form-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* 17. CORRECCIÓN: Responsive del formulario */
+@media (max-width: 768px) {
+    .floating-label,
+    .floating-label-select {
+        left: 48px;
+        font-size: 0.95rem;
+    }
+
+    .form-field.has-value .floating-label,
+    .form-field.is-focused .floating-label,
+    .form-input:focus + .floating-label,
+    .form-input:not(:placeholder-shown) + .floating-label,
+    .form-textarea:focus + .floating-label,
+    .form-textarea:not(:placeholder-shown) + .floating-label {
+        left: 44px;
+    }
+
+    .input-icon {
+        left: 16px;
+        font-size: 18px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 16px 16px 16px 48px;
+        font-size: 0.98rem;
+    }
+
+    .field-error {
+        padding-left: 48px;
+        font-size: 0.85rem;
+    }
+
+    .form-textarea {
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        margin-bottom: 24px;
+    }
+
+    .form-input,
+    .form-select {
+        height: 58px;
+    }
+
+    .floating-label,
+    .floating-label-select {
+        font-size: 0.9rem;
+    }
+
+    .form-button {
+        height: 58px;
+        font-size: 1rem;
+    }
+}
+
+/* 18. CORRECCIÓN: Prevenir zoom en iOS */
+@media screen and (max-width: 768px) {
+    .form-input,
+    .form-select,
+    .form-textarea {
+        font-size: 16px !important; /* Previene zoom en iOS */
+    }
+}
+
+/* 19. CORRECCIÓN: Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 20. CORRECCIÓN: Focus visible para accesibilidad */
+.form-input:focus-visible,
+.form-select:focus-visible,
+.form-textarea:focus-visible,
+.form-button:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+}
