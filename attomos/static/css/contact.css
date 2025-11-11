@@ -1,0 +1,1025 @@
+/* ============================================
+   CONTACT PAGE CSS - MEJORADO Y COMPLETO
+   ============================================ */
+
+/* Reset y variables */
+:root {
+    --primary-blue: #06b6d4;
+    --dark-blue: #0891b2;
+    --navy-blue: #0e7490;
+    --gray-text: #374151;
+    --light-gray: #f3f4f6;
+    --white: #ffffff;
+    --success-green: #10b981;
+    --warning-orange: #f59e0b;
+    --error-red: #ef4444;
+    --dark-bg: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    padding-top: 80px;
+    line-height: 1.6;
+    color: #1f2937;
+}
+
+/* ============================================
+   HERO SECTION - MEJORADO
+   ============================================ */
+
+.contact-hero {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.1) 100%);
+    padding: 120px 20px 100px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(6,182,212,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #1a1a1a, var(--primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #6b7280;
+    margin-bottom: 60px;
+    line-height: 1.7;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   CONTACT METHODS - MEJORADO
+   ============================================ */
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.method-card {
+    background: white;
+    padding: 40px 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(6,182,212,0.05), transparent);
+    transition: left 0.8s ease;
+}
+
+.method-card:hover::before {
+    left: 100%;
+}
+
+.method-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(6, 182, 212, 0.2);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.method-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 24px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.method-card:hover .method-icon {
+    transform: scale(1.15) rotate(10deg);
+}
+
+.method-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.method-text {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.method-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.method-link:hover {
+    color: var(--dark-blue);
+}
+
+/* ============================================
+   MAIN CONTACT SECTION
+   ============================================ */
+
+.contact-main {
+    padding: 100px 20px 140px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ============================================
+   CONTACT INFO - MEJORADO
+   ============================================ */
+
+.contact-info {
+    background: white;
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    position: sticky;
+    top: 100px;
+    transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-blue);
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.info-text {
+    font-size: 1.05rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(6, 182, 212, 0.03);
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(6, 182, 212, 0.08);
+    transform: translateX(8px);
+}
+
+.info-icon-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon-box i {
+    font-size: 26px;
+    color: white;
+}
+
+.info-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.info-content p {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ============================================
+   SOCIAL LINKS - ESTILO FOOTER (contact page)
+   ============================================ */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+    background: #06b6d4;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.25s ease;
+    z-index: 0;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.social-link i {
+    position: relative;
+    z-index: 1;
+}
+
+.social-link:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 10px 22px rgba(6, 182, 212, 0.35);
+    background: #0aa2c0;
+    color: #ffffff;
+}
+
+.social-link:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   CONTACT FORM - MEJORADO
+   ============================================ */
+
+.contact-form-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 48px 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.12), 0 0 1px rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #06b6d4, #0891b2, #06b6d4);
+    background-size: 200% 100%;
+    animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-title {
+    margin: 0 0 12px 0;
+    padding: 0;
+    border: none;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #0f172a, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.form-description {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Layout y espaciado general */
+.contact-form {
+    position: relative;
+    z-index: 1;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.form-field {
+    position: relative;
+    margin-bottom: 0;
+    /* Controla el fondo real que usan inputs y labels flotantes dentro de este field */
+    --input-bg: #ffffff;
+    overflow: visible; /* permite que el menú del select no se recorte */
+}
+
+.form-field:has(.form-select:focus) { 
+    z-index: 10; 
+}
+
+/* Iconos dentro de los inputs */
+.input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.textarea-icon {
+    top: 24px;
+    transform: translateY(0);
+}
+
+.form-field:has(.form-input:focus) .input-icon,
+.form-field:has(.form-textarea:focus) .input-icon {
+    color: #06b6d4;
+}
+
+/* Inputs base con iconos */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    /* Fondo controlado por variable local del field */
+    background: var(--input-bg, #ffffff);
+    color: #0f172a;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 18px 18px 18px 52px;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    font-family: inherit;
+}
+
+.form-select {
+    padding-left: 52px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%2306b6d4' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 14px;
+}
+
+.form-input,
+.form-select { 
+    height: 62px; 
+}
+
+.form-textarea { 
+    min-height: 200px; 
+    resize: none;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+/* Focus mejorado con glow */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 4px rgba(6,182,212,0.15), 0 4px 12px rgba(6,182,212,0.1);
+    background: #ffffff;
+}
+
+/* Estados válidos/inválidos: sutiles, sin rellenar el fondo */
+.form-field.is-valid .form-input,
+.form-field.is-valid .form-select,
+.form-field.is-valid .form-textarea {
+    border-color: #10b981;
+    /* Fondo se mantiene blanco para no “pintar” el campo */
+    --input-bg: #ffffff;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.10), 0 4px 10px rgba(16,185,129,0.08);
+}
+
+.form-field.is-valid .input-icon {
+    color: #10b981;
+}
+
+.form-field.is-invalid .form-input,
+.form-field.is-invalid .form-select,
+.form-field.is-invalid .form-textarea {
+    border-color: #ef4444;
+    /* Fondo se mantiene blanco; solo glow para avisar */
+    --input-bg: #ffffff;
+    box-shadow: 0 0 0 4px rgba(239,68,68,0.10), 0 4px 10px rgba(239,68,68,0.08);
+}
+
+.form-field.is-invalid .input-icon {
+    color: #ef4444;
+}
+
+/* Labels flotantes mejorados */
+.floating-label {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Usa el mismo fondo del input para que no “rompa” el diseño en estados */
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--input-bg, #ffffff) 50%, var(--input-bg, #ffffff) 100%);
+    padding: 0 8px;
+    font-size: 1rem;
+    color: #64748b;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    font-weight: 500;
+}
+
+.floating-label-select {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    padding: 0 8px;
+    font-size: 0.85rem;
+    color: #06b6d4;
+    pointer-events: none;
+    font-weight: 600;
+    transform: translateY(-44px) scale(0.9);
+    opacity: 1;
+}
+
+/* Activación de labels */
+.form-field.is-focused .floating-label,
+.form-field.has-value .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label,
+.form-textarea:not(:placeholder-shown) + .floating-label {
+    transform: translateY(-44px) scale(0.9);
+    color: #06b6d4;
+    font-weight: 600;
+    left: 48px;
+}
+
+.form-field.is-focused .floating-label,
+.form-input:focus + .floating-label,
+.form-textarea:focus + .floating-label {
+    color: #06b6d4;
+}
+
+/* Mensajes de error mejorados */
+.field-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #ef4444;
+    font-weight: 500;
+}
+
+.field-error:not(:empty)::before {
+    content: '⚠';
+    font-size: 14px;
+}
+
+/* Botón mejorado con efectos */
+.form-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 62px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+}
+
+.form-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.form-button:hover::before {
+    left: 100%;
+}
+
+.form-button:hover {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    box-shadow: 0 8px 30px rgba(6,182,212,0.4);
+    transform: translateY(-2px);
+}
+
+.form-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(6,182,212,0.3);
+}
+
+.button-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.form-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Success message mejorado */
+.success-message {
+    display: none;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 20px 28px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.35);
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.success-message i {
+    font-size: 24px;
+}
+
+.success-message.show {
+    display: flex;
+    animation: slideDown 0.5s ease, pulse 2s ease 0.5s;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   MAP SECTION
+   ============================================ */
+
+.map-section {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(6, 182, 212, 0.06) 100%);
+    padding: 100px 20px;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+.map-wrapper {
+    background: white;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.map-frame {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 20px;
+}
+
+/* ============================================
+   WHATSAPP FLOAT BUTTON - MEJORADO
+   ============================================ */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse {
+    0% { 
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7); 
+    }
+    70% { 
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4), 0 0 0 20px rgba(37, 211, 102, 0); 
+    }
+    100% { 
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); 
+    }
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-8px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-info {
+        position: relative;
+        top: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .contact-hero {
+        padding: 80px 20px 60px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+    }
+
+    .contact-main {
+        padding: 60px 20px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 36px 28px;
+    }
+
+    .info-title,
+    .form-title {
+        font-size: 1.8rem;
+    }
+
+    .method-card {
+        padding: 32px 24px;
+    }
+
+    .method-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .map-section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .map-frame {
+        height: 400px;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero {
+        padding: 60px 16px 40px 16px;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 28px 20px;
+    }
+
+    .info-title,
+    .form-title {
+        font-size: 1.6rem;
+    }
+
+    .method-card {
+        padding: 28px 20px;
+    }
+
+    .info-item {
+        padding: 16px;
+    }
+
+    .info-icon-box {
+        width: 48px;
+        height: 48px;
+    }
+
+    .info-icon-box i {
+        font-size: 22px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 14px 16px 14px 48px;
+        font-size: 0.98rem;
+    }
+
+    .input-icon {
+        left: 16px;
+        font-size: 18px;
+    }
+
+    .floating-label {
+        left: 48px;
+        font-size: 0.95rem;
+    }
+
+    .form-field.is-focused .floating-label,
+    .form-field.has-value .floating-label,
+    .form-input:not(:placeholder-shown) + .floating-label,
+    .form-textarea:not(:placeholder-shown) + .floating-label {
+        left: 44px;
+    }
+
+    .map-frame {
+        height: 320px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-form-container { 
+        padding: 32px 24px; 
+    }
+    
+    .form-title { 
+        font-size: 1.85rem; 
+        margin-bottom: 8px; 
+    }
+    
+    .form-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================
+   SMOOTH ANIMATIONS
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading states */
+.form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-button:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Animation delays for staggered effect */
+.method-card:nth-child(1) {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.method-card:nth-child(2) {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.method-card:nth-child(3) {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}

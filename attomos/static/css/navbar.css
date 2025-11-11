@@ -1,0 +1,368 @@
+:root {
+    --navbar-height: 72px;
+}
+/* Estilos del navbar restaurados (basados en index.css) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Navbar Styles */
+/* Base del navbar: fondo blanco translúcido + blur + paddings originales */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 40px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 16px 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Contenedor y logo */
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* necesario para pseudo-elementos */
+}
+
+/* Distribución de enlaces y acciones: idéntica a index.css */
+.navbar-content { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+}
+.navbar-menu { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+.navbar-cta { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+/* Enlaces con animación de subrayado y color de marca */
+.navbar-link {
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.navbar-link:hover {
+    color: #06b6d4;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #06b6d4;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 100%;
+}
+
+.navbar-link.active {
+    color: #06b6d4;
+    font-weight: 600;
+}
+
+/* Botones CTA con la misma apariencia y animación */
+.navbar-btn {
+    background: #06b6d4;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-btn:hover {
+    background: #0891b2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Dropdown en desktop (igual que antes, discreto y limpio) */
+.navbar-menu li {
+    position: relative;
+}
+.navbar-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: #ffffff;
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+.navbar-menu li:hover .navbar-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.navbar-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+.navbar-dropdown-item i {
+    font-size: 18px;
+    color: #06b6d4;
+    transition: transform 0.2s ease;
+}
+.navbar-dropdown-item:hover {
+    background: #f0f9ff;
+    color: #06b6d4;
+}
+.navbar-dropdown-item:hover i {
+    transform: translateX(4px);
+}
+
+/* Ajustes responsive mínimos como en index.css */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+    }
+    /* Mantener legibilidad en móvil: misma tipografía y espaciado */
+    .navbar-link { font-size: 16px; }
+    .navbar-btn { padding: 12px 24px; }
+}
+
+/* Botón hamburguesa */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    touch-action: manipulation;
+}
+.navbar-toggle:hover { background: #f3f4f6; }
+.navbar-toggle span { width: 24px; height: 2px; background: #1a1a1a; transition: all 0.3s ease; border-radius: 2px; }
+.navbar-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.navbar-toggle.active span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+.navbar-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* Dropdown (escritorio) */
+.navbar-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: #ffffff;
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+.navbar-menu li:hover .navbar-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+.navbar-dropdown-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; color: #374151; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: all 0.2s ease; border-radius: 8px;
+}
+.navbar-dropdown-item i { font-size: 18px; color: #06b6d4; transition: transform 0.2s ease; }
+.navbar-dropdown-item:hover { background: #f0f9ff; color: #06b6d4; }
+.navbar-dropdown-item:hover i { transform: translateX(4px); }
+
+/* Móvil: panel deslizante con overlay */
+@media (max-width: 768px) {
+    .navbar-container { padding: 0 20px; }
+    .navbar-toggle { display: flex; }
+
+    .navbar-content {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0; right: 0; bottom: 0;
+        background: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        padding: 32px 20px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        opacity: 0; visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
+        z-index: 1000;
+    }
+    .navbar-content.active { transform: translateX(0); opacity: 1; visibility: visible; will-change: transform, opacity; }
+
+    .navbar-menu { flex-direction: column; gap: 0; width: 100%; align-items: stretch; }
+    .navbar-menu li { width: 100%; border-bottom: 1px solid #eef2f7; }
+    .navbar-menu li:last-child { border-bottom: none; }
+
+    .navbar-link { display: block; padding: 18px 4px; font-size: 18px; line-height: 1.4; }
+    .navbar-link::after { display: none; }
+
+    .navbar-dropdown { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 8px 0 8px 20px; margin-top: 8px; display: none; }
+    .navbar-menu li.has-dropdown.open .navbar-dropdown { display: block; }
+
+    .navbar-dropdown-item { padding: 12px 12px; font-size: 16px; }
+
+    .navbar-cta { flex-direction: column; width: 100%; margin-top: 24px; gap: 12px; }
+    .navbar-btn { width: 100%; padding: 16px 28px; font-size: 16px; }
+
+    .navbar.scrolled { padding: 16px 20px; }
+}
+
+/* Overlay móvil */
+.navbar-overlay {
+    position: fixed; inset: 0;
+    background: rgba(2, 8, 23, 0.4);
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    z-index: 999;
+}
+.navbar-overlay.active { opacity: 1; visibility: visible; }
+
+/* Enfoque accesible */
+.navbar-link:focus-visible,
+.navbar-btn:focus-visible,
+.navbar-toggle:focus-visible {
+    outline: 3px solid rgba(6,182,212,0.5);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+    .navbar, .navbar-content, .navbar-toggle span, .navbar-link, .navbar-btn, .navbar-overlay { transition: none !important; animation: none !important; }
+}
+
+/* Bloquear scroll del body cuando abre el panel */
+body.menu-open { overflow: hidden; }
+
+/* Loading animation for buttons */
+.navbar-btn.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.navbar-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.navbar-btn.primary.loading::after {
+    border-top-color: white;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Subrayado animado del logo (como antes, limpio y discreto) */
+.navbar-logo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    width: 32px;               /* pequeña barra bajo el logo */
+    background: #1a1a1a;       /* arranca en negro como el texto */
+    border-radius: 2px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: logoUnderlineIn 600ms ease 200ms forwards;
+}
+
+.navbar-logo:hover::before {
+    background: #06b6d4;       /* color de marca al hover */
+}
+/* Icono del logo con “pop” sutil */
+.navbar-logo i, 
+.navbar-logo svg {
+    transition: transform 200ms ease, color 200ms ease;
+    color: #1a1a1a;
+}
+
+.navbar-logo:hover i,
+.navbar-logo:hover svg {
+    transform: translateY(-1px);
+    color: #06b6d4;
+}
+
+@keyframes logoUnderlineIn {
+    to { transform: scaleX(1); }
+}

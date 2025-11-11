@@ -1,0 +1,64 @@
+/* Global Mobile Styles (≤ 768px) */
+@media (max-width: 768px) {
+  :root {
+    --space: 16px;
+    --radius: 14px;
+    --font-title: 28px;
+    --font-subtitle: 16px;
+    --font-body: 15px;
+  }
+
+  body { font-size: var(--font-body); line-height: 1.55; }
+
+  /* Grid: stack vertical */
+  .platform-block,
+  .contact-grid,
+  .features-grid,
+  .pricing-grid,
+  .agents-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: calc(var(--space) * 2) !important;
+  }
+
+  /* Espaciados y contenedores */
+  .section,
+  .platforms-section,
+  .contact-main,
+  .map-section,
+  .footer-container {
+    padding: calc(var(--space) * 2) var(--space) !important;
+  }
+
+  /* Mockup/medios */
+  .mockup-phone { width: clamp(240px, 70vw, 320px) !important; }
+  .phone-screen-video video,
+  .mockup-image { border-radius: 22px !important; }
+
+  /* Títulos */
+  .hero-title, .form-title, .section-title { font-size: var(--font-title) !important; }
+  .hero-subtitle, .section-subtitle { font-size: var(--font-subtitle) !important; }
+
+  /* Navbar/CTA compactación si aplica */
+  .navbar-content { gap: 10px !important; }
+  .navbar-cta { margin-top: 8px !important; }
+
+  /* Flechas del carrusel centradas */
+  .platforms-section .carousel-arrow { bottom: 20px !important; }
+  .platforms-section .carousel-arrow.prev { left: calc(50% - 48px - 8px) !important; }
+  .platforms-section .carousel-arrow.next { left: calc(50% + 8px) !important; }
+
+  /* Formulario */
+  .form-row { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .form-input, .form-textarea, .form-select { font-size: var(--font-body) !important; }
+  .form-button { padding: 16px !important; font-size: 17px !important; }
+
+  /* Tarjetas generales */
+  .card, .method-card, .pricing-card, .agent-card {
+    border-radius: var(--radius) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Footer */
+  .footer-columns { grid-template-columns: 1fr !important; gap: var(--space) !important; }
+}

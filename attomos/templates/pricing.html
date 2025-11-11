@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Attomos</title>
+    <meta name="description" content="Planes simples y transparentes para tu negocio. Sin tarifas ocultas, sin compromisos a largo plazo.">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/pricing.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/mobile.css">
+    
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            <i class="lni lni-code-alt"></i>
+            Attomos
+        </a>
+
+        <div class="navbar-content" id="navbarContent">
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="/" class="navbar-link" data-page="home">Inicio</a></li>
+                <li><a href="/agents" class="navbar-link" data-page="agents">Chatbots</a></li>
+                <li><a href="/pricing" class="navbar-link" data-page="pricing">Precios</a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="navbar-link" data-page="solutions">
+                        Soluciones
+                        <i class="lni lni-chevron-down" style="font-size: 12px; margin-left: 4px;"></i>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="/solutions/restaurants" class="navbar-dropdown-item">
+                            <i class="lni lni-restaurant"></i>
+                            <span>Restaurantes</span>
+                        </a>
+                        <a href="/solutions/ecommerce" class="navbar-dropdown-item">
+                            <i class="lni lni-cart"></i>
+                            <span>E-Commerce</span>
+                        </a>
+                        <a href="/solutions/health" class="navbar-dropdown-item">
+                            <i class="lni lni-heart"></i>
+                            <span>Salud</span>
+                        </a>
+                        <a href="/solutions/education" class="navbar-dropdown-item">
+                            <i class="lni lni-graduation"></i>
+                            <span>Educación</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="/contact" class="navbar-link" data-page="contact">Contacto</a></li>
+            </ul>
+            
+            <div class="navbar-cta">
+                <a href="/login" class="navbar-btn secondary">Iniciar Sesión</a>
+                <a href="/register" class="navbar-btn primary">Comenzar Gratis</a>
+            </div>
+        </div>
+
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Planes Simples y Transparentes</h1>
+            <p class="hero-subtitle">Elige el plan perfecto para tu negocio. Sin tarifas ocultas, sin compromisos a largo plazo.</p>
+            
+            <div class="billing-toggle">
+                <span class="toggle-label active" id="monthlyLabel">Mensual</span>
+                <div class="toggle-switch" id="billingToggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label" id="yearlyLabel">Anual <span class="discount-badge">-20%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <!-- Plan Protón -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Plan Protón</h3>
+                <div class="plan-price" data-monthly="655" data-yearly="524">$655</div>
+                <div class="plan-period">por mes</div>
+                <p class="plan-description">Perfecto para pequeños negocios que comienzan con chatbots.</p>
+                
+                <ul class="plan-features">
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>1 Chatbot incluido</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>1,000 mensajes/mes</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Integración WhatsApp</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Soporte por email</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Panel básico de analytics</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>40 GB de almacenamiento</li>
+                </ul>
+                
+                <button class="plan-button">Comenzar Ahora</button>
+            </div>
+
+            <!-- Plan Neutrón -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">Más Popular</div>
+                <h3 class="plan-name">Plan Neutrón</h3>
+                <div class="plan-price" data-monthly="255" data-yearly="204">$255</div>
+                <div class="plan-period">por mes</div>
+                <p class="plan-description">Ideal para Mipymes en crecimiento que buscan más potencia.</p>
+                
+                <ul class="plan-features">
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>3 Chatbots incluidos</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>10,000 mensajes/mes</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Todas las plataformas</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Soporte prioritario 24/7</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Analytics avanzados</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Integraciones CRM</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>100 GB de almacenamiento</li>
+                </ul>
+                
+                <button class="plan-button">Comenzar Ahora</button>
+            </div>
+
+            <!-- Plan Electrón -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Plan Electrón</h3>
+                <div class="plan-price" data-monthly="999" data-yearly="799">$999</div>
+                <div class="plan-period">por mes</div>
+                <p class="plan-description">Para empresas que necesitan soluciones personalizadas.</p>
+                
+                <ul class="plan-features">
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Chatbots ilimitados</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Mensajes ilimitados</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Todas las funcionalidades</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Soporte dedicado</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>API personalizada</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>White label disponible</li>
+                    <li><span class="feature-icon"><i class="lni lni-checkmark"></i></span>Almacenamiento personalizado</li>
+                </ul>
+                
+                <button class="plan-button">Contactar Ventas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="section-header">
+                <h2 class="section-title">Comparación Detallada</h2>
+                <p class="section-subtitle">Todas las características en un solo lugar para que tomes la mejor decisión.</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div>Características</div>
+                    <div>Protón</div>
+                    <div>Neutrón</div>
+                    <div>Electrón</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Número de Chatbots</div>
+                    <div>1</div>
+                    <div>3</div>
+                    <div>Ilimitado</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Mensajes por mes</div>
+                    <div>1,000</div>
+                    <div>10,000</div>
+                    <div>Ilimitado</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Soporte 24/7</div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                </div>
+                
+                <div class="table-row">
+                    <div>API Personalizada</div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                </div>
+                
+                <div class="table-row">
+                    <div>White Label</div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Integraciones CRM</div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Analytics Avanzados</div>
+                    <div><i class="lni lni-close cross-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                    <div><i class="lni lni-checkmark check-icon"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Respuestas a las dudas más comunes sobre nuestros planes.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo cambiar de plan en cualquier momento?
+                    <div class="faq-icon">+</div>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, puedes actualizar o degradar tu plan cuando quieras. Los cambios se aplican inmediatamente y solo pagas la diferencia prorrateada.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué sucede si excedo mi límite de mensajes?
+                    <div class="faq-icon">+</div>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Te notificaremos cuando estés cerca del límite. Puedes comprar paquetes adicionales de mensajes o actualizar tu plan para obtener más mensajes incluidos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Ofrecen período de prueba gratuito?
+                    <div class="faq-icon">+</div>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, todos los planes incluyen 14 días de prueba gratuita. No se requiere tarjeta de crédito para comenzar.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué métodos de pago aceptan?
+                    <div class="faq-icon">+</div>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Aceptamos tarjetas de crédito/débito (Visa, Mastercard, American Express), PayPal y transferencias bancarias para planes anuales.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo cancelar mi suscripción?
+                    <div class="faq-icon">+</div>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Por supuesto. Puedes cancelar tu suscripción en cualquier momento desde tu panel de control. No hay penalizaciones ni cargos ocultos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-main-column">
+                    <h3 class="footer-title">Attomos</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/pricing">Precios</a></li>
+                        <li><a href="/agents">Chatbots</a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Soluciones</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="#">Tiendas Online</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Salud y Bienestar</a></li>
+                        <li><a href="#">Educación</a></li>
+                        <li><a href="#">Inmobiliarias</a></li>
+                        <li><a href="#">Veterinarias</a></li>
+                        <li><a href="#">Profesionales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-column">
+                    <h3 class="footer-title">Conecta</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-whatsapp">
+                            <i class="lni lni-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link social-instagram">
+                            <i class="lni lni-instagram-original"></i>
+                        </a>
+                        <a href="#" class="social-link social-tiktok">
+                            <i class="lni lni-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-link social-x">
+                            <i class="lni lni-twitter-original"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-info">
+                        <p>¿Tienes preguntas?</p>
+                        <a href="mailto:hola@attomos.com">hola@attomos.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 Attomos. Todos los derechos reservados.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button (sin onclick inline) -->
+    <div class="whatsapp-float" data-wa-number="5491234567890">
+        <i class="lni lni-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </div>
+
+    <script>
+        // Billing Toggle
+        const toggle = document.getElementById('billingToggle');
+        const monthlyLabel = document.getElementById('monthlyLabel');
+        const yearlyLabel = document.getElementById('yearlyLabel');
+        const prices = document.querySelectorAll('.plan-price');
+        
+        let isYearly = false;
+        
+        toggle.addEventListener('click', function() {
+            isYearly = !isYearly;
+            this.classList.toggle('active');
+            
+            monthlyLabel.classList.toggle('active');
+            yearlyLabel.classList.toggle('active');
+            
+            prices.forEach(price => {
+                const monthly = price.getAttribute('data-monthly');
+                const yearly = price.getAttribute('data-yearly');
+                
+                if (isYearly) {
+                    price.textContent = ' + yearly;
+                } else {
+                    price.textContent = ' + monthly;
+                }
+            });
+        });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+    // Footer animations on scroll (optional)
+    (function() {
+        'use strict';
+        
+        // Add smooth scroll to top functionality
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="lni lni-chevron-up"></i>';
+        scrollToTopBtn.className = 'scroll-to-top';
+        scrollToTopBtn.setAttribute('aria-label', 'Volver arriba');
+        
+        // Add scroll to top button styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .scroll-to-top {
+                position: fixed;
+                bottom: 32px;
+                right: 32px;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #06b6d4;
+                color: white;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+            }
+            
+            .scroll-to-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .scroll-to-top:hover {
+                background: #0891b2;
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(6, 182, 212, 0.5);
+            }
+            
+            @media (max-width: 768px) {
+                .scroll-to-top {
+                    bottom: 88px;
+                    right: 20px;
+                    width: 44px;
+                    height: 44px;
+                    font-size: 18px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(scrollToTopBtn);
+        
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update current year
+        const copyrightText = document.querySelector('.footer-copyright');
+        if (copyrightText) {
+            const currentYear = new Date().getFullYear();
+            copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', currentYear);
+        }
+        
+    })();
+</script>
+<!-- Scripts -->
+<script src="/static/js/navbar.js" defer></script>
+<script src="/static/js/shared.js" defer></script>
+<script src="/static/js/pricing.js" defer></script>
+</body>
+</html>

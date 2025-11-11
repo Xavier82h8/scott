@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attomos - Navbar</title>
+    
+    <!-- LineIcons -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    
+    <!-- CSS del Navbar -->
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <i class="lni lni-code-alt"></i>
+                Attomos
+            </a>
+
+            <div class="navbar-content" id="navbarContent">
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="/" class="navbar-link" data-page="home">Inicio</a></li>
+                    <li><a href="/agents" class="navbar-link" data-page="agents">Chatbots</a></li>
+                    <li><a href="/pricing" class="navbar-link" data-page="pricing">Precios</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="navbar-link" data-page="solutions">
+                            Soluciones
+                            <i class="lni lni-chevron-down" style="font-size: 12px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="/solutions/restaurants" class="navbar-dropdown-item">
+                                <i class="lni lni-restaurant"></i>
+                                <span>Restaurantes</span>
+                            </a>
+                            <a href="/solutions/ecommerce" class="navbar-dropdown-item">
+                                <i class="lni lni-cart"></i>
+                                <span>E-Commerce</span>
+                            </a>
+                            <a href="/solutions/health" class="navbar-dropdown-item">
+                                <i class="lni lni-heart"></i>
+                                <span>Salud</span>
+                            </a>
+                            <a href="/solutions/education" class="navbar-dropdown-item">
+                                <i class="lni lni-graduation"></i>
+                                <span>Educación</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="/contact" class="navbar-link" data-page="contact">Contacto</a></li>
+                </ul>
+                
+                <div class="navbar-cta">
+                    <a href="/login" class="navbar-btn secondary">Iniciar Sesión</a>
+                    <a href="/register" class="navbar-btn primary">Comenzar Gratis</a>
+                </div>
+            </div>
+
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenido de ejemplo -->
+    <div style="padding: 40px; max-width: 1400px; margin: 0 auto;">
+        <h1>Bienvenido a Attomos</h1>
+        <p>Transforma tu negocio con chatbots inteligentes.</p>
+        <div style="height: 150vh; padding: 40px 0;">
+            <p>Scroll para ver el efecto del navbar...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript del Navbar -->
+    <script src="navbar.js"></script>
+</body>
+</html>

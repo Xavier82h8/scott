@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbots - Attomos</title>
+    <meta name="description" content="Chatbots inteligentes para cada necesidad. Desde atención al cliente hasta ventas automatizadas.">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/mobile.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/agents.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <i class="lni lni-code-alt"></i>
+                Attomos
+            </a>
+            <div class="navbar-content" id="navbarContent">
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="/" class="navbar-link" data-page="home">Inicio</a></li>
+                    <li><a href="/agents" class="navbar-link" data-page="agents">Chatbots</a></li>
+                    <li><a href="/pricing" class="navbar-link" data-page="pricing">Precios</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="navbar-link" data-page="solutions">
+                            Soluciones
+                            <i class="lni lni-chevron-down" style="font-size: 12px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="/solutions/restaurants" class="navbar-dropdown-item">
+                                <i class="lni lni-restaurant"></i>
+                                <span>Restaurantes</span>
+                            </a>
+                            <a href="/solutions/ecommerce" class="navbar-dropdown-item">
+                                <i class="lni lni-cart"></i>
+                                <span>E-Commerce</span>
+                            </a>
+                            <a href="/solutions/health" class="navbar-dropdown-item">
+                                <i class="lni lni-heart"></i>
+                                <span>Salud</span>
+                            </a>
+                            <a href="/solutions/education" class="navbar-dropdown-item">
+                                <i class="lni lni-graduation"></i>
+                                <span>Educación</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="/contact" class="navbar-link" data-page="contact">Contacto</a></li>
+                </ul>
+                <div class="navbar-cta">
+                    <a href="/login" class="navbar-btn secondary">Iniciar Sesión</a>
+                    <a href="/register" class="navbar-btn primary">Comenzar Gratis</a>
+                </div>
+            </div>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="chatbots-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Chatbots Inteligentes para Cada Necesidad</h1>
+            <p class="hero-subtitle">Desde atención al cliente hasta ventas automatizadas, nuestros chatbots impulsados por IA transforman la forma en que te comunicas con tus clientes.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Disponibilidad</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfacción</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Más Conversiones</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="section-header">
+            <h2 class="section-title">Tipos de Chatbots</h2>
+            <p class="section-subtitle">Soluciones especializadas para cada industria y necesidad de tu negocio.</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-headphone-alt"></i>
+                </div>
+                <h3 class="category-title">Atención al Cliente</h3>
+                <p class="category-description">Responde consultas instantáneamente y brinda soporte 24/7 a tus clientes.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Respuestas instantáneas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Múltiples idiomas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Historial de conversación</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Escalamiento a humanos</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-cart"></i>
+                </div>
+                <h3 class="category-title">E-Commerce</h3>
+                <p class="category-description">Aumenta tus ventas con asistentes virtuales que guían a tus clientes.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Recomendaciones personalizadas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Seguimiento de pedidos</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Carritos abandonados</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Upselling inteligente</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-calendar"></i>
+                </div>
+                <h3 class="category-title">Reservas y Citas</h3>
+                <p class="category-description">Automatiza la gestión de citas y reservaciones sin complicaciones.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Agendamiento automático</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Recordatorios por SMS/Email</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Cancelaciones y reagendado</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Sincronización de calendario</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-rocket"></i>
+                </div>
+                <h3 class="category-title">Lead Generation</h3>
+                <p class="category-description">Captura y califica leads automáticamente para tu equipo de ventas.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Calificación automática</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Formularios conversacionales</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Integración con CRM</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Segmentación inteligente</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-graduation"></i>
+                </div>
+                <h3 class="category-title">Educación</h3>
+                <p class="category-description">Tutores virtuales y asistentes educativos para instituciones.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Tutoría personalizada</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Respuestas FAQ instantáneas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Seguimiento de progreso</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Notificaciones automáticas</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-heart-pulse"></i>
+                </div>
+                <h3 class="category-title">Salud</h3>
+                <p class="category-description">Asistentes médicos virtuales para clínicas y hospitales.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Triaje de síntomas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Gestión de citas médicas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Recordatorios de medicamentos</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>HIPAA compliant</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-home"></i>
+                </div>
+                <h3 class="category-title">Inmobiliarias</h3>
+                <p class="category-description">Automatiza consultas y tours virtuales de propiedades.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Tours virtuales 24/7</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Filtrado de propiedades</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Agenda de visitas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Calificación de leads</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="lni lni-paw"></i>
+                </div>
+                <h3 class="category-title">Veterinarias</h3>
+                <p class="category-description">Gestiona citas y consultas para el cuidado de mascotas.</p>
+                <ul class="category-features">
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Recordatorios de vacunas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Consultas urgentes</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Historial de mascotas</li>
+                    <li><span class="feature-check"><i class="lni lni-checkmark"></i></span>Consejos de cuidado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Características Avanzadas</h2>
+                <p class="section-subtitle">Tecnología de punta que hace que nuestros chatbots sean excepcionales.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-brain"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Procesamiento de Lenguaje Natural</h3>
+                        <p>Comprende el contexto y la intención detrás de cada mensaje para dar respuestas precisas y naturales.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-layers"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Integración Multicanal</h3>
+                        <p>Funciona perfectamente en WhatsApp, Facebook, Instagram, Telegram, web y más plataformas.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-graph"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Analytics en Tiempo Real</h3>
+                        <p>Obtén insights detallados sobre el comportamiento de tus usuarios y optimiza conversaciones.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-shield"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Seguridad y Privacidad</h3>
+                        <p>Encriptación de extremo a extremo y cumplimiento con GDPR, HIPAA y otras regulaciones.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-cog"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Personalización Total</h3>
+                        <p>Adapta la personalidad, tono y respuestas del chatbot para reflejar tu marca perfectamente.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="lni lni-bolt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Respuestas Instantáneas</h3>
+                        <p>Tiempo de respuesta menor a 1 segundo para mantener a tus clientes siempre satisfechos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">¿Listo para Automatizar tu Negocio?</h2>
+            <p class="cta-text">Únete a miles de empresas que ya están transformando su atención al cliente con nuestros chatbots inteligentes.</p>
+            <a href="/register" class="cta-button">Comienza Gratis Ahora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-main-column">
+                    <h3 class="footer-title">Attomos</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/pricing">Precios</a></li>
+                        <li><a href="/agents">Chatbots</a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Soluciones</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="#">Tiendas Online</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Salud y Bienestar</a></li>
+                        <li><a href="#">Educación</a></li>
+                        <li><a href="#">Inmobiliarias</a></li>
+                        <li><a href="#">Veterinarias</a></li>
+                        <li><a href="#">Profesionales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-column">
+                    <h3 class="footer-title">Conecta</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-whatsapp">
+                            <i class="lni lni-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link social-instagram">
+                            <i class="lni lni-instagram-original"></i>
+                        </a>
+                        <a href="#" class="social-link social-tiktok">
+                            <i class="lni lni-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-link social-x">
+                            <i class="lni lni-twitter-original"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-info">
+                        <p>¿Tienes preguntas?</p>
+                        <a href="mailto:hola@attomos.com">hola@attomos.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 Attomos. Todos los derechos reservados.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button (sin onclick inline) -->
+    <div class="whatsapp-float" data-wa-number="5491234567890">
+        <i class="lni lni-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </div>
+    <!-- Scripts -->
+    <script src="/static/js/navbar.js" defer></script>
+    <script src="/static/js/shared.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Fallback de íconos en feature-icon-box
+        document.querySelectorAll('.feature-icon-box').forEach(box => {
+            if (!box.querySelector('i')) {
+                const icon = document.createElement('i');
+                icon.className = 'lni lni-bolt'; // ícono por defecto
+                box.appendChild(icon);
+            }
+        });
+    });
+    </script>
+    <script src="/static/js/index.js" defer></script>
+</body>
+</html>

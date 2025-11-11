@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Attomos</title>
+    <meta name="description" content="¿Tienes preguntas o necesitas ayuda? Nuestro equipo está listo para ayudarte a transformar tu negocio con chatbots inteligentes.">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/contact.css">
+    <link rel="stylesheet" href="/static/css/mobile.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hablemos de Tu Proyecto</h1>
+            <p class="hero-subtitle">¿Tienes preguntas o necesitas ayuda? Nuestro equipo está listo para ayudarte a transformar tu negocio con chatbots inteligentes.</p>
+            
+            <div class="contact-methods">
+                <div class="method-card" onclick="window.location.href='mailto:hola@attomos.com'">
+                    <div class="method-icon">
+                        <i class="lni lni-envelope"></i>
+                    </div>
+                    <h3 class="method-title">Email</h3>
+                    <p class="method-text">
+                        <a href="mailto:hola@attomos.com" class="method-link">hola@attomos.com</a>
+                    </p>
+                </div>
+
+                <div class="method-card" onclick="window.open('https://wa.me/5491234567890', '_blank')">
+                    <div class="method-icon">
+                        <i class="lni lni-whatsapp"></i>
+                    </div>
+                    <h3 class="method-title">WhatsApp</h3>
+                    <p class="method-text">
+                        <a href="https://wa.me/5491234567890" class="method-link">+54 9 123 456 7890</a>
+                    </p>
+                </div>
+
+                <div class="method-card" onclick="window.location.href='tel:+541234567890'">
+                    <div class="method-icon">
+                        <i class="lni lni-phone"></i>
+                    </div>
+                    <h3 class="method-title">Teléfono</h3>
+                    <p class="method-text">
+                        <a href="tel:+541234567890" class="method-link">+54 (123) 456-7890</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2 class="info-title">Información de Contacto</h2>
+                <p class="info-text">¿Prefieres contactarnos directamente? Aquí encontrarás toda nuestra información. Estamos disponibles 24/7 para atenderte.</p>
+                
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <i class="lni lni-map-marker"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Dirección</h4>
+                            <p>Avenida Innovación 123, Piso 5<br>Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <i class="lni lni-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Teléfono</h4>
+                            <p>+54 (123) 456-7890<br>Lunes a Viernes, 9:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <i class="lni lni-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>hola@attomos.com<br>soporte@attomos.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <i class="lni lni-timer"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="lni lni-facebook-original"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="lni lni-instagram-original"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="lni lni-twitter-original"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="lni lni-linkedin-original"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="lni lni-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <div class="success-message" id="successMessage">
+                    <i class="lni lni-checkmark-circle"></i>
+                    <span>¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
+                </div>
+
+                <div class="form-header">
+                    <h2 class="form-title">Envíanos un Mensaje</h2>
+                    <p class="form-description">Completa el formulario y nos pondremos en contacto contigo lo antes posible</p>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <!-- Fila: Nombre / Apellido -->
+                    <div class="form-row">
+                        <div class="form-field" id="ff-firstName">
+                            <div class="input-icon">
+                                <i class="lni lni-user"></i>
+                            </div>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required placeholder=" " aria-describedby="firstNameError">
+                            <label for="firstName" class="floating-label">Nombre *</label>
+                            <small id="firstNameError" class="field-error" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-field" id="ff-lastName">
+                            <div class="input-icon">
+                                <i class="lni lni-user"></i>
+                            </div>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required placeholder=" " aria-describedby="lastNameError">
+                            <label for="lastName" class="floating-label">Apellido *</label>
+                            <small id="lastNameError" class="field-error" aria-live="polite"></small>
+                        </div>
+                    </div>
+
+                    <!-- Fila: Email / Teléfono -->
+                    <div class="form-row">
+                        <div class="form-field" id="ff-email">
+                            <div class="input-icon">
+                                <i class="lni lni-envelope"></i>
+                            </div>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder=" " aria-describedby="emailError">
+                            <label for="email" class="floating-label">Email *</label>
+                            <small id="emailError" class="field-error" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-field" id="ff-phone">
+                            <div class="input-icon">
+                                <i class="lni lni-phone"></i>
+                            </div>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder=" " aria-describedby="phoneError" inputmode="tel">
+                            <label for="phone" class="floating-label">Teléfono</label>
+                            <small id="phoneError" class="field-error" aria-live="polite"></small>
+                        </div>
+                    </div>
+
+                    <!-- Asunto -->
+                    <div class="form-row">
+                        <div class="form-field" id="ff-subject">
+                            <div class="input-icon">
+                                <i class="lni lni-tag"></i>
+                            </div>
+                            <select id="subject" name="subject" class="form-select" required aria-describedby="subjectError">
+                                <option value="">Selecciona un asunto</option>
+                                <option value="general">💬 Consulta General</option>
+                                <option value="sales">💰 Ventas</option>
+                                <option value="support">🛠️ Soporte Técnico</option>
+                                <option value="partnership">🤝 Alianzas Estratégicas</option>
+                                <option value="demo">🚀 Solicitar Demo</option>
+                                <option value="other">📋 Otro</option>
+                            </select>
+                            <label for="subject" class="floating-label-select">Asunto *</label>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div class="form-row">
+                        <div class="form-field" id="ff-message">
+                            <div class="input-icon textarea-icon">
+                                <i class="lni lni-comments"></i>
+                            </div>
+                            <textarea id="message" name="message" class="form-textarea" required placeholder=" " aria-describedby="messageError"></textarea>
+                            <label for="message" class="floating-label">Mensaje *</label>
+                            <small id="messageError" class="field-error" aria-live="polite"></small>
+                        </div>
+                    </div>
+
+                    <!-- Botón -->
+                    <button id="contactSubmit" class="form-button" type="submit" aria-label="Enviar Mensaje">
+                        <span class="button-text">Enviar Mensaje</span>
+                        <i class="lni lni-arrow-right button-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="section-header">
+                <h2 class="section-title">Encuéntranos</h2>
+                <p class="section-subtitle">Visítanos en nuestras oficinas o agenda una reunión virtual.</p>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe 
+                    class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878252145!2d-58.38375908477032!3d-34.60373098045802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacb9f8ff113%3A0x22fd08eb5e2b850a!2sObelisco!5e0!3m2!1ses-419!2sar!4v1234567890123!5m2!1ses-419!2sar"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navbar unificado -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <i class="lni lni-code-alt"></i>
+                Attomos
+            </a>
+            <div class="navbar-content" id="navbarContent">
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="/" class="navbar-link" data-page="home">Inicio</a></li>
+                    <li><a href="/agents" class="navbar-link" data-page="agents">Chatbots</a></li>
+                    <li><a href="/pricing" class="navbar-link" data-page="pricing">Precios</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="navbar-link" data-page="solutions">Soluciones
+                            <i class="lni lni-chevron-down" style="font-size: 12px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="/solutions/restaurants" class="navbar-dropdown-item"><i class="lni lni-restaurant"></i><span>Restaurantes</span></a>
+                            <a href="/solutions/ecommerce" class="navbar-dropdown-item"><i class="lni lni-cart"></i><span>E-Commerce</span></a>
+                            <a href="/solutions/health" class="navbar-dropdown-item">
+                                <i class="lni lni-heart"></i>
+                                <span>Salud</span>
+                            </a>
+                            <a href="/solutions/education" class="navbar-dropdown-item"><i class="lni lni-graduation"></i><span>Educación</span></a>
+                        </div>
+                    </li>
+                    <li><a href="/contact" class="navbar-link" data-page="contact">Contacto</a></li>
+                </ul>
+                <div class="navbar-cta">
+                    <a href="/login" class="navbar-btn secondary">Iniciar Sesión</a>
+                    <a href="/register" class="navbar-btn primary">Comenzar Gratis</a>
+                </div>
+            </div>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Footer unificado -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-main-column">
+                    <h3 class="footer-title">Attomos</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/pricing">Precios</a></li>
+                        <li><a href="/agents">Chatbots</a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Soluciones</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="#">Tiendas Online</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Salud y Bienestar</a></li>
+                        <li><a href="#">Educación</a></li>
+                        <li><a href="#">Inmobiliarias</a></li>
+                        <li><a href="#">Veterinarias</a></li>
+                        <li><a href="#">Profesionales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-column">
+                    <h3 class="footer-title">Conecta</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-whatsapp"><i class="lni lni-whatsapp"></i></a>
+                        <a href="#" class="social-link social-instagram"><i class="lni lni-instagram-original"></i></a>
+                        <a href="#" class="social-link social-tiktok"><i class="lni lni-tiktok"></i></a>
+                        <a href="#" class="social-link social-x"><i class="lni lni-twitter-original"></i></a>
+                    </div>
+                    <div class="footer-contact-info">
+                        <p>¿Tienes preguntas?</p>
+                        <a href="mailto:hola@attomos.com">hola@attomos.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2025 Attomos. Todos los derechos reservados.</div>
+                <div class="footer-legal-links">
+                    <a href="#">Términos</a><a href="#">Privacidad</a><a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" data-wa-number="5491234567890">
+        <i class="lni lni-whatsapp"></i><span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </div>
+
+    <script src="/static/js/navbar.js" defer></script>
+    <script src="/static/js/shared.js" defer></script>
+    <script src="/static/js/contact.js" defer></script>
+</body>
+</html>

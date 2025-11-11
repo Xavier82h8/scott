@@ -1,0 +1,255 @@
+/* ============================================
+   MEJORAS VISUALES PARA EL CARRUSEL
+   ============================================ */
+
+/* Sistema de variables para consistencia (sombras, transiciones, espaciado) */
+:root {
+    /* Sombras y transiciones consistentes */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --transition-fast: 0.2s;
+    --transition-medium: 0.6s;
+    --space-5: 32px;
+    --radius-outer: 24px;
+    --arrow-gap: 16px;
+}
+
+/* Contenedor de plataformas con overflow oculto */
+.platforms-section {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+    min-height: clamp(560px, 62vh, 780px);
+    box-sizing: border-box;
+}
+
+/* Platform blocks mejorados */
+.platform-block {
+    will-change: transform, opacity;
+    transition: none;
+    display: grid;
+    grid-template-columns: minmax(320px, 380px) 1fr;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mockup container y teléfono */
+.mockup-container {
+    perspective: 1000px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 0 8px;
+}
+.mockup-phone {
+    position: relative;            /* Referencia para absolutos internos */
+    width: clamp(260px, 25vw, 380px);
+    aspect-ratio: 9 / 16;
+    overflow: hidden;              /* Evita cualquier desbordamiento del video */
+    transform-style: preserve-3d;
+    transition: transform var(--transition-medium) cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    contain: layout paint size;    /* Aísla el layout para mayor estabilidad */
+}
+
+.platform-block:hover .mockup-phone {
+    transform: translateZ(20px) scale(1.05);
+}
+
+/* Sombra dinámica del mockup */
+.mockup-phone::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
+    opacity: 0.5;
+    transition: all var(--transition-medium) ease;
+}
+
+.mockup-phone:hover::after {
+    opacity: 0.7;
+    width: 90%;
+}
+
+/* Video con efecto de brillo: ocupa todo el mockup y se recorta con borde */
+.phone-screen-video {
+    position: absolute;            /* Fija el video dentro del mockup */
+    inset: 0;                      /* Ocupa exactamente el contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* Cubre sin deformar el contenido */
+    border-radius: var(--radius-outer);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    z-index: 1;                    /* Debajo del marco */
+}
+.phone-screen-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: shine 3.5s infinite;
+    pointer-events: none;
+}
+@keyframes shine {
+    0% { left: -100%; }
+    50%, 100% { left: 200%; }
+}
+
+/* Marco del mockup (overlay) */
+.mockup-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;           /* Mantiene relación de aspecto del marco */
+    pointer-events: none;          /* No interfiere con interacciones/animaciones */
+    z-index: 2;                    /* Encima del video */
+}
+
+/* Platform content mejorado */
+.platform-content { animation: none; }
+
+.platform-name {
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-name::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #06b6d4, #0891b2);
+    transition: width var(--transition-medium) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.platform-block:hover .platform-name::after { width: 100px; }
+
+/* Iconos de plataforma */
+.platform-icon {
+    transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.platform-block:hover .platform-icon {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Features con hover mejorado */
+.platform-features li {
+    transition: all var(--transition-fast) ease;
+    padding-left: 0;
+    position: relative;
+}
+
+.platform-features li:hover {
+    padding-left: 8px;
+    color: #1a1a1a;
+}
+
+.platform-features li:hover .check-icon {
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 6px 16px rgba(6, 182, 212, 0.4);
+}
+
+.check-icon { transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Flechas del carrusel con gradiente y sombras consistentes */
+.carousel-arrow {
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    transition: transform var(--transition-fast) ease, box-shadow var(--transition-medium) ease, background var(--transition-fast) ease, border-color var(--transition-fast) ease;
+}
+.carousel-arrow:hover {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+.carousel-arrow i {
+    transition: transform var(--transition-fast) ease;
+}
+.carousel-arrow:hover i { transform: scale(1.2); }
+
+.carousel-arrow:focus-visible {
+    outline: 2px solid rgba(6, 182, 212, 0.6);
+    outline-offset: 2px;
+}
+
+/* Grupo de flechas centrado con espaciado regular */
+.carousel-arrow-group {
+    position: absolute;
+    left: 50%;
+    bottom: var(--space-5);
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--arrow-gap);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: saturate(1.2) blur(12px);
+    -webkit-backdrop-filter: saturate(1.2) blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: var(--shadow-medium);
+    pointer-events: all;
+}
+
+/* Indicadores (si existieran) */
+.carousel-indicators,
+.carousel-counter { display: none !important; }
+
+/* Barra de progreso automática (si se usa) */
+.carousel-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.carousel-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #06b6d4, #0891b2);
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .platform-block,
+    .platform-block.reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    .mockup-phone { width: clamp(240px, 60vw, 320px); }
+    .carousel-arrow-group { bottom: 24px; }
+}
+@media (max-width: 640px) {
+    .carousel-arrow-group { bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mockup-phone,
+    .carousel-arrow,
+    .phone-screen-video::before {
+        transition: none !important;
+        animation: none !important;
+    }
+}
