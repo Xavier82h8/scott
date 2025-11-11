@@ -474,6 +474,7 @@ body {
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
+    background-color: var(--input-bg, #ffffff);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%2306b6d4' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 18px center;
@@ -547,16 +548,16 @@ body {
 
 .floating-label-select {
     position: absolute;
-    left: 52px;
+    left: 48px;
     top: 0;
-    transform: translateY(-50%) scale(0.85);
-    background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--input-bg, #ffffff) 50%, var(--input-bg, #ffffff) 100%);
+    transform: translateY(-11px) scale(0.9);
+    background: var(--input-bg, #ffffff);
     padding: 0 8px;
     font-size: 1rem;
-    color: #64748b;
+    color: #06b6d4;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Activación de labels */

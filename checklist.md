@@ -1,8 +1,8 @@
 # Checklist de Errores
 
 ## index.html
-- [ ] Error en la incorporación de `mockup.png`.
+- [ ] Incorporación de mockup.png con errores de CSS.
 
 ## contact.html
-- [ ] Error de CSS en el formulario de la derecha.
+- [ ] Errores de CSS en el formulario de la derecha.
 - [ ] Revisar y corregir errores de lógica y diseño en el formulario.
