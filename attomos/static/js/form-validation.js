@@ -181,6 +181,11 @@
         if (fields.subject) {
             fields.subject.addEventListener('change', () => {
                 validateField('subject');
+                if (fields.subject.value) {
+                    fieldContainers.subject.classList.add('has-value');
+                } else {
+                    fieldContainers.subject.classList.remove('has-value');
+                }
             });
         }
     }
