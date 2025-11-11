@@ -77,7 +77,7 @@
             transition: width 0.3s ease;
         }
 
-        .navbar-link:hover::after {
+        .navbar-links .navbar-link:hover::after {
             width: 100%;
         }
 
@@ -405,7 +405,7 @@
         .platform-block {
             display: grid;
             grid-template-columns: 450px 1fr;
-            gap: 80px;
+            gap: 120px;
             align-items: center;
             margin-bottom: 120px;
             opacity: 0;
